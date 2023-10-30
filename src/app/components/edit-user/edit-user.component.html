@@ -1,0 +1,25 @@
+
+<h2 mat-dialog-title class="custom-dialog-title">Editar Usuario</h2>
+
+<div mat-dialog-content>
+
+  <form (ngSubmit)="editUser()" class="custom-form">
+    <!-- Tu formulario de edición de tareas aquí -->
+    <div class="form-field">
+      <label for="email">Main:</label>
+      <input type="text" id="email" name="email" [value]="user.email" [(ngModel)]="user.email" required>
+    </div>
+
+    <div class="form-field">
+      <label for="password">Pass:</label>
+      <input id="text" name="password" [value]="user.password" [(ngModel)]="user.password" required>
+    </div>
+
+    <!-- Otros campos del formulario si es necesario -->
+
+    <button type="submit" class="custom-button">Guardar Cambios</button>
+  </form>
+  <div mat-dialog-actions>
+    <button mat-button (click)="closeDialog()" class="custom-button" >Cancelar</button>
+  </div>
+</div>

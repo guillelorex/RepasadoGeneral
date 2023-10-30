@@ -1,0 +1,19 @@
+<h1>Registrarse</h1>
+
+<div>
+    <h2 class="custom-dialog-title">Crear Cuenta</h2>
+    <form autocomplete="off" class="login-form" (ngSubmit)="userRegister()">
+        <div class="form-field">
+            <label for="mail">Mail:</label>
+            <input type="text" id="mail" name="mail" [(ngModel)]="newUser.email" required>
+        </div>
+    
+        <div class="form-field">
+            <label for="password">Pass:</label>
+            <input type="text" id="password" name="password" [(ngModel)]="newUser.password" required>
+        </div>
+        <button type="submit" class="login-button" (ngSubmit)="userRegister()">Crear Cuenta</button>
+    </form>
+    <a class="login-button" (click)="navigateToLogin()">volver</a>
+</div>
+

@@ -1,0 +1,9 @@
+<footer *ngIf="!isUser" class="footer">
+  <p>&copy; 2023 Gestión de Personas App</p>
+</footer>
+
+<footer *ngIf="isUser" class="footer">
+  <p>&copy; 2023 Gestión de Personas App</p>
+  <li><button class="edit-button" (click)="editUser(user)">Editar User</button></li>
+  <li><button (click)="logout()">Logout</button></li>
+</footer>
