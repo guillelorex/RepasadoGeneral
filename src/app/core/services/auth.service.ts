@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { User } from '../Models';
+import { MatDialog } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
+import { EditUserComponent } from 'src/app/components/edit-user/edit-user.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ import { lastValueFrom } from 'rxjs';
 export class AuthService {
   user: undefined;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private dialog: MatDialog) { }
 
   public async checkAuth(email:string, password: string): Promise<boolean>{
 
@@ -43,7 +45,15 @@ export class AuthService {
     this.user = undefined;
     localStorage.clear();
   }
+  
+  public editUser (user: User) {
 
+    const dialogRef = this.dialog.open(EditUserComponent, { data: user, height: '400px', width: '350px' });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El cuadro de diálogo se cerró con resultado:', result);
+    });
+  }
 
   /*
   Lo siguiente no funciona porque el susbcribe, al ser observable, se saltea y el length se hace en base a un arreglo vacio

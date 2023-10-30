@@ -67,6 +67,11 @@
       "id": 2,
       "email": "guille",
       "password": "123"
+    },
+    {
+      "id": 3,
+      "email": "mati",
+      "password": "mati"
     }
   ]
 }

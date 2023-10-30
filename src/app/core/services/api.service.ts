@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   editUser(id: number, updateUser: User): Observable<boolean> {
-    const url = `${this.baseURL}/persons/${id}`;
+    const url = `${this.baseURL}/users/${id}`;
     return this.http.put<boolean>(url, updateUser);
   }
 
